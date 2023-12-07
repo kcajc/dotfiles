@@ -2,49 +2,53 @@
 "   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
-
-
+ 
+ 
 let mapleader=" "
-
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
+ 
+set clipboard+=unnamed
 set scrolloff=5
-
-" Searching
+set number
+set relativenumber
+set showmode
+ 
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-
-" Line number
-set relativenumber
-
-" Clipboard integration
-set clipboard+=unnamedplus
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
-
-" My custom mappings
-map H <Action>(PreviousTab)
-map L <Action>(NextTab)
-map <Leader>c <Action>(CloseContent)
-map <Leader>e <Action>(ActivateProjectToolWindow)
+ 
+set ideajoin
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
-" Highlight copied text
 Plug 'machakann/vim-highlightedyank'
-" Commentary plugin
 Plug 'tpope/vim-commentary'
+Plug 'vim-surround'
+Plug 'nerdtree'
 
-
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-" Map <leader>d to start debug
+" Use P to paste without overwriting the registry
+map P _dp
+ 
+map H <Action>(PreviousTab)
+map L <Action>(NextTab)
+ 
+map gd <Action>(GotoDeclaration)
+map gh <Action>(ShowHoverInfo)
+ 
+map <leader>e :NERDTreeToggle<CR>
+map <leader>o :NERDTreeFocus<CR>
+map <leader>r <Action>(RenameElement)
 map <leader>d <Action>(Debug)
-
-" Map \b to toggle the breakpoint on the current line
 map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>l <Action>(ReformatCode)
+map <leader>i <Action>(OptimizeImports)
+map <leader>t <Action>(ActivateTerminalToolWindow)
+map <leader>a <Action>(ShowIntentionActions)
+"map <leader>f <Action>(FindInPath)
+map <leader>cu <Action>(CloseAllUnmodifiedEditors)
+map <leader>co <Action>(CloseAllEditorsButActive)
+map <leader>gb <Action>(Annotate)
+map <leader>gd <Action>(Compare.SameVersion)
+map <leader>gc <Action>(ActivateCommitToolWindow)
+
+" This feels so wrong but it's awesome
+map <esc> <Action>(HideAllWindows)
