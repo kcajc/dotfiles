@@ -1,0 +1,22 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap /\nmap H previousTab\nmap L nextTab\nmap J goBack\nmap K goForward",
+  "settingsVersion": "2.0.5",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "ft",
+      "pattern": "https?://www.youtube.com/*"
+    },
+    {
+      "passKeys": "f",
+      "pattern": "https?://music.youtube.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://usevia.app/*"
+    }
+  ]
+}
