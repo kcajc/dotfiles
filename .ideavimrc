@@ -36,19 +36,23 @@ map gh <Action>(ShowHoverInfo)
  
 map <leader>e :NERDTreeToggle<CR>
 map <leader>o :NERDTreeFocus<CR>
-map <leader>r <Action>(RenameElement)
 map <leader>d <Action>(Debug)
 map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>r <Action>(Run)
 map <leader>l <Action>(ReformatCode)
 map <leader>i <Action>(OptimizeImports)
 map <leader>t <Action>(ActivateTerminalToolWindow)
 map <leader>a <Action>(ShowIntentionActions)
-"map <leader>f <Action>(FindInPath)
+map <leader>n <Action>(RenameFile)
 map <leader>cu <Action>(CloseAllUnmodifiedEditors)
 map <leader>co <Action>(CloseAllEditorsButActive)
 map <leader>gb <Action>(Annotate)
 map <leader>gd <Action>(Compare.SameVersion)
 map <leader>gc <Action>(ActivateCommitToolWindow)
 
+map \r <Action>(RenameElement)
+
 " This feels so wrong but it's awesome
 map <esc> <Action>(HideAllWindows)
+" To compensate for the above, we need to remap <C-c> for canceling
+map <leader>q <C-c>
