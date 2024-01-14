@@ -1,6 +1,6 @@
 {
   "keyMappings": "# Insert your preferred key mappings here.\nunmap /\nmap H previousTab\nmap L nextTab\nmap J goBack\nmap K goForward",
-  "settingsVersion": "2.0.5",
+  "settingsVersion": "2.0.6",
   "exclusionRules": [
     {
       "passKeys": "",
@@ -17,6 +17,10 @@
     {
       "passKeys": "",
       "pattern": "https?://usevia.app/*"
+    },
+    {
+      "passKeys": "f",
+      "pattern": "https?://www.bilibili.com/*"
     }
   ]
 }
