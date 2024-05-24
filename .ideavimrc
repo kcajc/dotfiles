@@ -52,7 +52,5 @@ map <leader>gc <Action>(ActivateCommitToolWindow)
 
 map \r <Action>(RenameElement)
 
-" This feels so wrong but it's awesome
-map <esc> <Action>(HideAllWindows)
-" To compensate for the above, we need to remap <C-c> for canceling
-map <leader>q <C-c>
+" Get rid of all side panels
+map <esc><esc> <Action>(HideAllWindows)
